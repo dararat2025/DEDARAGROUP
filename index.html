@@ -96,7 +96,7 @@
         <p class="subtitle">Innovating for a Better Tomorrow</p>
         
         <!-- Main Image -->
-        <img src="https://picsum.photos" alt="DEDARAGROUP Banner Image">
+        <img src="file:///Users/familymac/Downloads/DEDARA.png="DEDARAGROUP">
         
         <h2>About Us</h2>
         <p>Welcome to DEDARAGROUP ENDLESS TRUST. We are thinking about future Generations. We bring together four essential sectors under one trusted global company: food, health and wellbeing, technology, and sustainable living.   Our purpose is to make everyday life simpler, stronger, and more connected by providing services that support people from daily needs to future opportunities. Our goal is to bring efficiency, structure, and forward-thinking ideas to everything we build and manage. We are a dedicated team focused on delivering high-quality solutions, services, and community impact.</p>
@@ -117,14 +117,19 @@
         
         <!-- Subscribe Link (Replace the # with your actual link) -->
         <div class="button-container">
-            <a href="https://youtube.com" target="_blank" class="subscribe-btn">Subscribe to DEDARAGROUP</a>
+            <a href="https://a.co/d/05KQ1VtS">Subscribe to DEDARAGROUP</a>
         </div>
     </div>
     <!-- Copyright Footer Section -->
     <div style="text-align: center; margin-top: 30px; font-size: 14px; color: #718096;">
         <p>&copy; 2026 DEDARAGROUP. All rights reserved.</p>
+        <!-- Footer with Copyright and Terms Link -->
+    <div class="footer">
+        <span>&copy; 2026 DEDARAGROUP. All rights reserved.</span>
+        <a href="#" id="termsLink">Terms & Conditions</a>
     </div>
-	Hidden Terms & Conditions Pop-up Box -->
+
+    <!-- Hidden Terms & Conditions Pop-up Box -->
     <div id="termsModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" id="closeModal">&times;</span>
@@ -138,31 +143,6 @@
             <p>Your use of this website and any dispute arising out of such use is subject to local business and governing laws.</p>
         </div>
     </div>
-
-    <!-- Simple code to make the pop-up window open and close -->
-    <script>
-        const modal = document.getElementById("termsModal");
-        const link = document.getElementById("termsLink");
-        const closeBtn = document.getElementById("closeModal");
-
-        // Open pop-up when clicking the link
-        link.onclick = function(e) {
-            e.preventDefault();
-            modal.style.display = "flex";
-        }
-
-        // Close pop-up when clicking the X
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // Close pop-up if user clicks outside the white box
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 
 </body>
 </html>
