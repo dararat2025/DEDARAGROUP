@@ -95,12 +95,12 @@
         <h1>DEDARAGROUP</h1>
         <p class="subtitle">Innovating for a Better Tomorrow</p>
         
-        <!-- file:///Users/familymac/Downloads/DEDARA.png -->
+        <!-- Connected to your uploaded image file -->
         <img src="file:///Users/familymac/Downloads/DEDARA.png" alt="DEDARAGROUP LTD">
 
         
         <h2>About Us</h2>
-        <p>Welcome to DEDARAGROUP ENDLESS TRUST. We are thinking about future Generations. We bring together four essential sectors under one trusted global company: food, health and wellbeing, technology, and sustainable living.   Our purpose is to make everyday life simpler, stronger, and more connected by providing services that support people from daily needs to future opportunities. Our goal is to bring efficiency, structure, and forward-thinking ideas to everything we build and manage. We are a dedicated team focused on delivering high-quality solutions, services, and community impact.</p>
+        <p>Welcome to DEDARAGROUP ENDLESS TRUST. We are thinking about future Generations. We bring together four essential sectors under one trusted global company: food, health and wellbeing, technology, and sustainable living.          Our purpose is to make everyday life simpler, stronger, and more connected by providing services that support people from daily needs to future opportunities. Our goal is to bring efficiency, structure, and forward-thinking ideas to everything we build and manage.          We are a dedicated team focused on delivering high-quality solutions, services, and community impact.</p>
         
         <h2>What We Do</h2>
         <p>At DEDARAGROUP, is an all-in-one ecosystem where individuals, families, creators, and businesses can access a wide range of services in one place. Our services including:</p>
@@ -118,37 +118,89 @@
         
         <!-- Link (Replace the # with your actual link) -->
         <div class="button-container">
-            <a href="https://a.co/d/05KQ1VtS">Subscribe to DEDARAGROUP</a>
+            <a href="https://a.co/d/05KQ1VtS">DEDARAGROUP</a>
         </div>
 		<!-- Link (Replace the # with your actual link) -->
         <div class="button-container">
-            <a href="www.youtube.com/@Peterchannel67">Subscribe to DEDARAGROUP</a>
+            <a href="www.youtube.com/@Peterchannel67">DEDARAGROUP</a>
         </div>
 		
     </div>
-    <!-- Copyright Footer Section -->
-    <div style="text-align: center; margin-top: 30px; font-size: 14px; color: #718096;">
-        <p>&copy; 2026 DEDARAGROUP LTD. All rights reserved.</p>
-        <!-- Footer with Copyright and Terms Link -->
+   <!-- Footer with both links -->
     <div class="footer">
-        <span>&copy; 2026 DEDARAGROUP LTD. All rights reserved.</span>
-        <a href="#" id="termsLink">Terms & Conditions</a>
+        <span>&copy; 2026 DEDARAGROUP. All rights reserved.</span>
+        <a href="#" id="openLegalModal">Terms & Privacy Policy</a>
     </div>
 
-    <!-- Hidden Terms & Conditions Pop-up Box -->
-    <div id="termsModal" class="modal">
+    <!-- Legal Documents Pop-up Box -->
+    <div id="legalModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" id="closeModal">&times;</span>
-            <h3>Terms and Conditions</h3>
-            <p>Welcome to DEDARAGROUP. By accessing this website, you agree to comply with and be bound by the following terms and conditions of use.</p>
-            <h4>1. Use of Content</h4>
-            <p>The content on this website is for your general information and use only. It is subject to change without notice.</p>
-            <h4>2. Intellectual Property</h4>
-            <p>All trademarks, logos, and materials displayed on this website are the property of DEDARAGROUP.</p>
-            <h4>3. Governing Law</h4>
-            <p>Your use of this website and any dispute arising out of such use is subject to local business and governing laws.</p>
+            
+            <!-- Navigation Tabs -->
+            <div class="tab-container">
+                <button class="tab-btn active" onclick="switchTab('terms')">Terms & Conditions</button>
+                <button class="tab-btn" onclick="switchTab('privacy')">Privacy Policy</button>
+            </div>
+
+            <!-- Tab 1: Terms Content -->
+            <div id="terms" class="tab-content active">
+                <h3>Terms and Conditions</h3>
+                <p>Welcome to DEDARAGROUP. By accessing this website, you agree to comply with and be bound by the following terms and conditions of use.</p>
+                <h4>1. Use of Content</h4>
+                <p>The content on this website is for your general information and use only. It is subject to change without notice.</p>
+                <h4>2. Intellectual Property</h4>
+                <p>All trademarks, logos, and materials displayed on this website are the property of DEDARAGROUP.</p>
+            </div>
+
+            <!-- Tab 2: Privacy Content -->
+            <div id="privacy" class="tab-content">
+                <h3>Privacy Policy</h3>
+                <p>Your privacy is important to us. This policy explains how DEDARAGROUP handles user information.</p>
+                <h4>1. Information Collection</h4>
+                <p>We do not collect personal data from visitors unless you voluntarily contact us or interact with our external subscription buttons.</p>
+                <h4>2. Cookies & Analytics</h4>
+                <p>This website is hosted via GitHub Pages. Standard web server access logs may be collected automatically by the hosting provider.</p>
+                <h4>3. Data Protection</h4>
+                <p>We will never sell, distribute, or lease your personal information to third parties unless required by law.</p>
+            </div>
         </div>
     </div>
 
+    <!-- Script to handle opening, closing, and switching tabs -->
+    <script>
+        const modal = document.getElementById("legalModal");
+        const link = document.getElementById("openLegalModal");
+        const closeBtn = document.getElementById("closeModal");
+
+        // Open pop-up window
+        link.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = "flex";
+        }
+
+        // Close pop-up window
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Switch between Terms and Privacy tabs
+        function switchTab(tabId) {
+            // Hide all content tabs
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            // Remove active style from buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected content and activate button
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
