@@ -262,41 +262,43 @@
             </div>
         </div>
     </div>
-
     <!-- Script to handle opening, closing, and switching tabs -->
     <script>
         const modal = document.getElementById("legalModal");
         const link = document.getElementById("openLegalModal");
         const closeBtn = document.getElementById("closeModal");
 
-        // Open pop-up window
+        // Force the modal window to hide completely when the page first opens
+        modal.style.display = "none";
+
+        // Open pop-up window when user clicks the footer link
         link.onclick = function(e) {
             e.preventDefault();
             modal.style.display = "flex";
         }
 
-        // Close pop-up window
+        // Close pop-up window when user clicks the X button
         closeBtn.onclick = function() {
             modal.style.display = "none";
         }
 
+        // Close pop-up if user clicks anywhere outside the white content box
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
 
-        // Switch between Terms and Privacy tabs
+        // Switch between Terms and Privacy tabs seamlessly
         function switchTab(tabId) {
-            // Hide all content tabs
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            // Remove active style from buttons
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             
-            // Show selected content and activate button
             document.getElementById(tabId).classList.add('active');
             event.currentTarget.classList.add('active');
         }
     </script>
+
+   
 </body>
 </html>
