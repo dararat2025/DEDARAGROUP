@@ -39,7 +39,7 @@
         }
 
         h2 {
-            color: #2b6cb0;
+            color: #4299e1; /* Clear blue for section titles */
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 5px;
             margin-top: 30px;
@@ -47,13 +47,14 @@
 
         p {
             line-height: 1.7;
-            color: #4a5568;
+            color: #e2e8f0; /* Light gray paragraph text for easy reading */
+        
         }
 
         /* Styling for the list of what the group does */
         ul {
             padding-left: 20px;
-            color: #4a5568;
+            color: #e2e8f0;
             line-height: 1.8;
         }
 
@@ -87,7 +88,102 @@
         .subscribe-btn:hover {
             background-color: #c53030; 
         }
-    </style>
+    
+	/* Footer styling */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #a0aec0;
+        }
+
+        .footer a {
+            color: #63b3ed;
+            text-decoration: none;
+            margin-left: 15px;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Pop-up (Modal) Box Styling */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.8); 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #1a202c;
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 550px;
+            max-height: 75vh;
+            overflow-y: auto;
+            position: relative;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            border: 1px solid #2d3748;
+        }
+
+        .close-btn {
+            color: #a0aec0;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+        }
+
+        .close-btn:hover {
+            color: #ffffff;
+        }
+
+        /* Tabs inside the pop-up window */
+        .tab-container {
+            display: flex;
+            border-bottom: 2px solid #2d3748;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #a0aec0;
+        }
+
+        .tab-btn.active {
+            color: #63b3ed;
+            border-bottom: 3px solid #63b3ed;
+            margin-bottom: -2px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+	
+	
+	
+	</style>
 </head>
 <body>
 
