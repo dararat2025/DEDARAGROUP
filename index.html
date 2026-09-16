@@ -1,293 +1,305 @@
-
-        
-     <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEDARAGROUP | Official Website</title>
+    <meta name="description" content="DEDARAGROUP builds trusted solutions across food, wellbeing, technology, creativity, and sustainable living.">
+    <meta name="theme-color" content="#08111f">
+    <title>DEDARAGROUP | Endless Trust. Shared Progress.</title>
     <style>
+        :root {
+            color-scheme: dark;
+            --background: #08111f;
+            --surface: #111d2f;
+            --surface-raised: #17263b;
+            --border: #263a56;
+            --text: #f7fbff;
+            --muted: #a9b8ca;
+            --primary: #63b3ed;
+            --primary-strong: #3182ce;
+            --accent: #f56565;
+            --accent-hover: #e53e3e;
+            --focus: #fbd38d;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #111111 !important; /* Forces the background to stay pure black */
-            color: #ffffff; /* White text for contrast */
+            min-height: 100vh;
             margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 32px 20px;
+            background:
+                radial-gradient(circle at top, rgba(49, 130, 206, 0.18), transparent 34rem),
+                var(--background);
+            color: var(--text);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.65;
         }
 
-        .container {
-            max-width: 650px;
-            background: #1a202c; /* Elegant dark-gray content card */
-            padding: 40px;
+        a { color: var(--primary); }
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+        .page-shell { width: min(100%, 780px); margin: 0 auto; }
+
+        .card {
+            overflow: hidden;
+            background: rgba(17, 29, 47, 0.96);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+        }
+
+        header { padding: 56px 56px 38px; text-align: center; }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        h1, h2, h3 { line-height: 1.2; }
+        h1 { margin: 0; font-size: clamp(2.2rem, 8vw, 4rem); letter-spacing: -0.04em; }
+        h2 { margin: 0 0 16px; font-size: 1.55rem; }
+        h3 { margin: 0 0 12px; }
+
+        .tagline { max-width: 560px; margin: 16px auto 0; color: var(--muted); font-size: 1.15rem; }
+        main { padding: 0 56px 48px; }
+        section + section { margin-top: 42px; }
+        section h2 { padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--primary); }
+        p { margin: 0 0 16px; color: #dce7f3; }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin: 22px 0 20px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .services li {
+            padding: 18px;
+            background: rgba(23, 38, 59, 0.75);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            border: 1px solid #2d3748; /* Subtle border for depth */
+            color: #dce7f3;
         }
 
-        h1 {
-            color: #63b3ed; /* Vibrant bright blue heading */
-            text-align: center;
-            margin-bottom: 5px;
-        }
+        .services strong { display: block; margin-bottom: 5px; color: var(--text); }
 
-        .subtitle {
-            text-align: center;
-            color: #a0aec0; /* Soft gray subtitle text */
-            font-style: italic;
-            margin-top: 0;
-            margin-bottom: 25px;
-        }
+        .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
 
-        h2 {
-            color: #4299e1; /* Clear blue for section titles */
-            border-bottom: 2px solid #2d3748;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-
-        p {
-            line-height: 1.7;
-            color: #e2e8f0; /* Light gray paragraph text for easy reading */
-        }
-
-        ul {
-            padding-left: 20px;
-            color: #e2e8f0;
-            line-height: 1.8;
-        }
-
-        li {
-            margin-bottom: 12px;
-        }
-
-        .button-container {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .subscribe-btn {
-            display: inline-block;
-            background-color: #e53e3e; /* Crimson red subscribe button */
-            color: white;
-            padding: 12px 35px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 25px;
-            margin: 5px;
-            transition: background 0.2s ease;
-        }
-
-        .subscribe-btn:hover {
-            background-color: #c53030; 
-        }
-
-        /* Footer styling */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #a0aec0;
-        }
-
-        .footer a {
-            color: #63b3ed;
-            text-decoration: none;
-            margin-left: 15px;
-            font-weight: 500;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Pop-up (Modal) Box Styling - STRICTLY HIDDEN BY DEFAULT */
-        .modal {
-            display: none !important; 
-            position: fixed; 
-            z-index: 1000; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(0,0,0,0.8); 
-            justify-content: center;
+        .button {
+            display: inline-flex;
+            min-height: 48px;
             align-items: center;
+            justify-content: center;
+            padding: 12px 22px;
+            border: 1px solid transparent;
+            border-radius: 999px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+        }
+
+        .button:hover { transform: translateY(-2px); }
+        .button-primary { background: var(--accent); }
+        .button-primary:hover { background: var(--accent-hover); }
+        .button-secondary { background: var(--primary-strong); }
+        .button-secondary:hover { background: #2b6cb0; }
+        .button-outline { border-color: var(--border); background: transparent; }
+        .button-outline:hover { border-color: var(--primary); background: rgba(99, 179, 237, 0.1); }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 20px;
+            padding: 24px 56px 30px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer a { font-weight: 600; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        .modal[hidden] { display: none; }
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.78);
         }
 
         .modal-content {
-            background-color: #1a202c;
-            color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 550px;
-            max-height: 75vh;
+            width: min(100%, 620px);
+            max-height: min(760px, 90vh);
             overflow-y: auto;
-            position: relative;
-            text-align: left;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            border: 1px solid #2d3748;
+            padding: 30px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .close-btn {
-            color: #a0aec0;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 20px;
+        .modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+        .close-button { border: 0; background: transparent; color: var(--muted); font-size: 2rem; line-height: 1; cursor: pointer; }
+        .close-button:hover { color: var(--text); }
+        .tabs { display: flex; gap: 4px; margin: 22px 0; border-bottom: 1px solid var(--border); }
+        .tab-button { padding: 11px 14px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--muted); font: inherit; font-weight: 700; cursor: pointer; }
+        .tab-button[aria-selected="true"] { border-bottom-color: var(--primary); color: var(--primary); }
+        .tab-panel[hidden] { display: none; }
+        .modal h4 { margin: 22px 0 6px; color: var(--primary); }
+
+        @media (max-width: 620px) {
+            body { padding: 14px; }
+            header { padding: 38px 24px 28px; }
+            main { padding: 0 24px 34px; }
+            footer { padding: 22px 24px 26px; }
+            .services { grid-template-columns: 1fr; }
+            .actions .button { width: 100%; }
         }
 
-        .close-btn:hover {
-            color: #ffffff;
-        }
-
-        /* Tabs inside the pop-up window */
-        .tab-container {
-            display: flex;
-            border-bottom: 2px solid #2d3748;
-            margin-bottom: 20px;
-            margin-top: 10px;
-        }
-
-        .tab-btn {
-            background: none;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #a0aec0;
-        }
-
-        .tab-btn.active {
-            color: #63b3ed;
-            border-bottom: 3px solid #63b3ed;
-            margin-bottom: -2px;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .button { transition: none; }
         }
     </style>
 </head>
 <body>
+    <div class="page-shell">
+        <div class="card">
+            <header>
+                <p class="eyebrow">Endless trust</p>
+                <h1>DEDARAGROUP</h1>
+                <p class="tagline">Building practical ideas and trusted opportunities for a better tomorrow.</p>
+            </header>
 
-    <div class="container">
-        <h1>DEDARAGROUP</h1>
-        <p class="subtitle">Innovating for a Better Tomorrow</p>
-        
-        <h2>About Us</h2>
-        <p>Welcome to DEDARAGROUP ENDLESS TRUST. We are thinking about future Generations. We bring together four essential sectors under one trusted global company: food, health and wellbeing, technology, and sustainable living. Our purpose is to make everyday life simpler, stronger, and more connected by providing services that support people from daily needs to future opportunities. Our goal is to bring efficiency, structure, and forward-thinking ideas to everything we build and manage. We are a dedicated team focused on delivering high-quality solutions, services, and community impact.</p>
-        
-        <h2>What We Do</h2>
-        <p>At DEDARAGROUP, we offer an all-in-one ecosystem where individuals, families, creators, and businesses can access a wide range of services in one place. Our services include:</p>
-        <ul>
-            <li><strong>Core Offerings:</strong> Food and nutrition, health and wellbeing, shelter and sustainable living, NLP and conversational AI, content creation and the creator economy, workflow automation, subscription commerce, digital tools, and global business solutions.</li>
-            <li><strong>Project Management:</strong> Organizing, planning, and executing complex projects from start to finish.</li>
-            <li><strong>Community & Collaboration:</strong> Bringing together talented individuals to solve modern problems.</li>
-            <li><strong>Consulting & Strategy:</strong> We believe the future should be built with trust, innovation, care, and opportunity for everyone. By combining essential human needs with modern technology, DEDARAGROUP aims to create practical solutions that improve lives today while protecting possibilities for tomorrow.</li>
-        </ul>
-        <p>DEDARAGROUP is more than a company. It is a global vision for a future where everything people need can be found under one roof.</p>
+            <main>
+                <section aria-labelledby="about-heading">
+                    <h2 id="about-heading">About us</h2>
+                    <p>DEDARAGROUP is a forward-looking global vision focused on the things that matter most: people, wellbeing, creativity, technology, and sustainable living.</p>
+                    <p>We connect ideas, people, and projects to create useful solutions for individuals, families, creators, and businesses.</p>
+                </section>
 
-               <h2>Stay Connected</h2>
-        <p>We are constantly growing and launching new initiatives. Click the buttons below to explore our latest updates and announcements.</p>
-        
-        <div class="button-container">
-            <!-- Button 1: Replace with your actual Amazon book link -->
-            <a href="https://amazon.com" target="_blank" class="subscribe-btn">DEDARAGROUP 789 (Book)</a>
-            
-            <!-- Button 2: Replace with your actual YouTube link -->
-            <a href="https://youtube.com" target="_blank" class="subscribe-btn">DEDARAGROUP AI (YouTube)</a>
+                <section aria-labelledby="work-heading">
+                    <h2 id="work-heading">What we do</h2>
+                    <p>Our growing ecosystem brings together expertise and collaboration across several connected areas:</p>
+                    <ul class="services">
+                        <li><strong>Food &amp; wellbeing</strong>Practical ideas that support healthier, more sustainable lives.</li>
+                        <li><strong>Technology &amp; AI</strong>Digital tools, NLP, and conversational AI for modern needs.</li>
+                        <li><strong>Creativity &amp; media</strong>Content, publishing, and opportunities for the creator economy.</li>
+                        <li><strong>Projects &amp; strategy</strong>Planning, consulting, and delivery from concept to completion.</li>
+                    </ul>
+                    <p>We believe progress is strongest when it is built with trust, care, innovation, and opportunity for everyone.</p>
+                </section>
+
+                <section aria-labelledby="connect-heading">
+                    <h2 id="connect-heading">Stay connected</h2>
+                    <p>Explore our latest projects and announcements, or get in touch to discuss an idea or collaboration.</p>
+                    <div class="actions">
+                        <a class="button button-primary" href="https://www.amazon.com/s?k=DEDARAGROUP+789" target="_blank" rel="noopener noreferrer">Find us on Amazon</a>
+                        <a class="button button-secondary" href="https://www.youtube.com/results?search_query=DEDARAGROUP+AI" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+                        <a class="button button-outline" href="mailto:info@dedaragroup.com">Email DEDARAGROUP</a>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <span>&copy; <span id="year">2026</span> DEDARAGROUP. All rights reserved.</span>
+                <a href="#legal" id="openLegalModal">Terms &amp; Privacy Policy</a>
+            </footer>
         </div>
-
-        <h2>Contact Us</h2>
-        <p>Have questions, project inquiries, or looking to collaborate? Reach out to the DEDARAGROUP team directly via email.</p>
-        
-        <div class="button-container">
-            <a href="mailto:info@://dedaragroup.com" class="subscribe-btn" style="background-color: #2b6cb0;">Email DEDARAGROUP</a>
-        </div>
-
-        
-        <div class="button-container">
-            <!-- Replace info@dedaragroup.com with your actual business email address -->
-            <a href="mailto:info@dedaragroup.com" class="subscribe-btn" style="background-color: #2b6cb0;">Email DEDARAGROUP</a>
-        </div>
-
-       
-
-
-    <!-- Footer with both links -->
-    <div class="footer">
-        <span>&copy; 2026 DEDARAGROUP. All rights reserved.</span>
-        <a href="#" id="openLegalModal">Terms & Privacy Policy</a>
     </div>
 
-    <!-- Legal Documents Pop-up Box -->
-    <div id="legalModal" class="modal">
+    <div class="modal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle" hidden>
         <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            
-            <!-- Navigation Tabs -->
-            <div class="tab-container">
-                <button class="tab-btn active" onclick="switchTab('terms')">Terms & Conditions</button>
-                <button class="tab-btn" onclick="switchTab('privacy')">Privacy Policy</button>
+            <div class="modal-header">
+                <h3 id="legalTitle">Terms &amp; privacy</h3>
+                <button class="close-button" id="closeModal" type="button" aria-label="Close terms and privacy dialog">&times;</button>
             </div>
 
-            <!-- Tab 1: Terms Content -->
-            <div id="terms" class="tab-content active">
-                <h3>Terms and Conditions</h3>
-                <p>Welcome to DEDARAGROUP. By accessing this website, you agree to comply with and be bound by the following terms and conditions of use.</p>
-                <h4>1. Use of Content</h4>
-                <p>The content on this website is for your general information and use only. It is subject to change without notice.</p>
-                <h4>2. Intellectual Property</h4>
-                <p>All trademarks, logos, and materials displayed on this website are the property of DEDARAGROUP.</p>
+            <div class="tabs" role="tablist" aria-label="Legal information">
+                <button class="tab-button" id="termsTab" type="button" role="tab" aria-selected="true" aria-controls="termsPanel">Terms &amp; Conditions</button>
+                <button class="tab-button" id="privacyTab" type="button" role="tab" aria-selected="false" aria-controls="privacyPanel">Privacy Policy</button>
             </div>
 
-            <!-- Tab 2: Privacy Content -->
-            <div id="privacy" class="tab-content">
-                <h3>Privacy Policy</h3>
-                <p>Your privacy is important to us. This policy explains how DEDARAGROUP handles user information.</p>
-                <h4>1. Information Collection</h4>
-                <p>We do not collect personal data from visitors unless you voluntarily contact us or interact with our external subscription buttons.</p>
-                <h4>2. Cookies & Analytics</h4>
-                <p>This website is hosted via GitHub Pages. Standard web server access logs may be collected automatically by the hosting provider.</p>
-                <h4>3. Data Protection</h4>
-                <p>We will never sell, distribute, or lease your personal information to third parties unless required by law.</p>
-            </div>
+            <section id="termsPanel" class="tab-panel" role="tabpanel" aria-labelledby="termsTab">
+                <p>By using this website, you agree to use it lawfully and respectfully. The information provided is for general information and may change without notice.</p>
+                <h4>Intellectual property</h4>
+                <p>DEDARAGROUP names, logos, written content, and original materials are protected by applicable intellectual-property laws. Please contact us before reproducing our materials.</p>
+                <h4>External links</h4>
+                <p>Links to third-party websites are provided for convenience. DEDARAGROUP is not responsible for external content, availability, or privacy practices.</p>
+            </section>
+
+            <section id="privacyPanel" class="tab-panel" role="tabpanel" aria-labelledby="privacyTab" hidden>
+                <p>We respect your privacy. This website does not require an account and does not intentionally collect personal information through forms or tracking tools.</p>
+                <h4>Contacting us</h4>
+                <p>If you email us, we will use the information you provide only to respond to your message and manage the conversation.</p>
+                <h4>Hosting and third parties</h4>
+                <p>This website is hosted through GitHub Pages. External services linked from this page may have their own terms, cookies, and privacy policies.</p>
+                <h4>Questions</h4>
+                <p>For privacy questions, email <a href="mailto:info@dedaragroup.com">info@dedaragroup.com</a>.</p>
+            </section>
         </div>
     </div>
 
-    <!-- Script to handle opening, closing, and switching tabs -->
     <script>
         const modal = document.getElementById("legalModal");
-        const link = document.getElementById("openLegalModal");
-        const closeBtn = document.getElementById("closeModal");
+        const openButton = document.getElementById("openLegalModal");
+        const closeButton = document.getElementById("closeModal");
+        const termsTab = document.getElementById("termsTab");
+        const privacyTab = document.getElementById("privacyTab");
+        const termsPanel = document.getElementById("termsPanel");
+        const privacyPanel = document.getElementById("privacyPanel");
+        let lastFocusedElement;
 
-        // Force modal hidden initially via JavaScript setup
-        modal.style.setProperty('display', 'none', 'important');
+        document.getElementById("year").textContent = new Date().getFullYear();
 
-        // Open pop-up window
-        link.onclick = function(e) {
-            e.preventDefault();
-            modal.style.setProperty('display', 'flex', 'important');
+        function openModal(event) {
+            event.preventDefault();
+            lastFocusedElement = document.activeElement;
+            modal.hidden = false;
+            closeButton.focus();
+            document.body.style.overflow = "hidden";
         }
 
-        // Close pop-up window
-        closeBtn.onclick = function() {
-  
-       
-          
-       
-	
-	
+        function closeModal() {
+            modal.hidden = true;
+            document.body.style.overflow = "";
+            if (lastFocusedElement) lastFocusedElement.focus();
+        }
 
-       
-		
-    
+        function switchTab(tab) {
+            const showTerms = tab === "terms";
+            termsTab.setAttribute("aria-selected", String(showTerms));
+            privacyTab.setAttribute("aria-selected", String(!showTerms));
+            termsPanel.hidden = !showTerms;
+            privacyPanel.hidden = showTerms;
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+        termsTab.addEventListener("click", () => switchTab("terms"));
+        privacyTab.addEventListener("click", () => switchTab("privacy"));
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) closeModal();
+        });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && !modal.hidden) closeModal();
+        });
+    </script>
+</body>
+</html>
