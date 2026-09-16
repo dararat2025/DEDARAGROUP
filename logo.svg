@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title desc">
+  <title id="title">DEDARA logo</title>
+  <desc id="desc">Gold monogram and DEDARA wordmark</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8f5705"/><stop offset=".28" stop-color="#ffe39a"/><stop offset=".52" stop-color="#c88716"/><stop offset=".75" stop-color="#fff0b8"/><stop offset="1" stop-color="#9d6108"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" fill="#fcfaf4"/>
+  <g fill="none" stroke="url(#gold)" stroke-width="2">
+    <path d="M130 72h92c71 0 112 35 112 87 0 48-39 78-99 78h-42"/>
+    <path d="M158 72v164c0 16-12 22-29 22h-1"/>
+    <path d="M194 128h91c61 0 101 35 101 84 0 56-43 94-106 94h-79"/>
+    <path d="M222 128v148c0 18-12 28-35 28"/>
+    <path d="M130 258c42 0 69-30 104-63 32-30 54-40 77-40"/>
+    <path d="M181 263c27 22 49 48 87 48 45 0 82-32 82-84"/>
+  </g>
+  <g fill="url(#gold)" font-family="Georgia,serif" text-anchor="middle">
+    <text x="250" y="424" font-size="67" letter-spacing="1">DEDARA</text>
+  </g>
+  <path d="M103 333h127m40 0h127" stroke="url(#gold)" stroke-width="1"/>
+  <path d="M250 320l5 10 10 5-10 5-5 10-5-10-10-5 10-5z" fill="url(#gold)"/>
+</svg>
