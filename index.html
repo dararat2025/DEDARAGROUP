@@ -8,121 +8,321 @@
     <title>DEDARAGROUP | Endless Trust. Shared Progress.</title>
     <style>
         :root {
-            --page-bg: #071a2c;
-            --panel-bg: rgba(17, 31, 48, 0.96);
-            --red: #ef6b6b;
-            --blue: #3b8edb;
-            --navy: #1d2f49;
-            --border: rgba(158, 203, 255, 0.6);
-            --text: #f4f9ff;
-            --code: #67aaf3;
+            color-scheme: dark;
+            --background: #08111f;
+            --surface: #111d2f;
+            --surface-raised: #17263b;
+            --border: #263a56;
+            --text: #f7fbff;
+            --muted: #a9b8ca;
+            --primary: #63b3ed;
+            --primary-strong: #3182ce;
+            --accent: #f56565;
+            --accent-hover: #e53e3e;
+            --focus: #fbd38d;
         }
 
         * { box-sizing: border-box; }
 
-        html, body {
-            margin: 0;
-            min-height: 100%;
-            background: var(--page-bg);
-            color: var(--text);
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 28px 18px;
+            margin: 0;
+            padding: 32px 20px;
+            background:
+                radial-gradient(circle at top, rgba(49, 130, 206, 0.18), transparent 34rem),
+                var(--background);
+            color: var(--text);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.65;
         }
 
-        .page-shell {
-            width: min(100%, 1500px);
+        a { color: var(--primary); }
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+        .page-shell { width: min(100%, 780px); margin: 0 auto; }
+
+        .card {
+            overflow: hidden;
+            background: rgba(17, 29, 47, 0.96);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+        }
+
+        header { padding: 56px 56px 38px; text-align: center; }
+
+        .brand {
             display: flex;
             flex-direction: column;
-            gap: 26px;
-        }
-
-        .button-row {
-            display: flex;
             align-items: center;
-            gap: 24px;
-            width: 100%;
+            gap: 12px;
         }
 
-        .pill {
-            display: flex;
+        .brand-logo {
+            display: block;
+            width: clamp(150px, 28vw, 220px);
+            height: auto;
+            filter: drop-shadow(0 8px 18px rgba(255, 214, 111, 0.18));
+        }
+
+        .eyebrow {
+            margin: 0;
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        h1, h2, h3 { line-height: 1.2; }
+        h1 { margin: 0; font-size: clamp(2.2rem, 8vw, 4rem); letter-spacing: -0.04em; }
+        h2 { margin: 0 0 16px; font-size: 1.55rem; }
+        h3 { margin: 0 0 12px; }
+
+        .tagline { max-width: 560px; margin: 16px auto 0; color: var(--muted); font-size: 1.15rem; }
+        main { padding: 0 56px 48px; }
+        section + section { margin-top: 42px; }
+        section h2 { padding-bottom: 10px; border-bottom: 1px solid var(--border); color: var(--primary); }
+        p { margin: 0 0 16px; color: #dce7f3; }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin: 22px 0 20px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .services li {
+            padding: 18px;
+            background: rgba(23, 38, 59, 0.75);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: #dce7f3;
+        }
+
+        .services strong { display: block; margin-bottom: 5px; color: var(--text); }
+
+        .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px; }
+
+        .button {
+            display: inline-flex;
+            min-height: 48px;
             align-items: center;
             justify-content: center;
-            min-height: 140px;
+            padding: 12px 22px;
+            border: 1px solid transparent;
             border-radius: 999px;
-            padding: 18px 26px;
+            color: #fff;
             font-weight: 700;
-            font-size: clamp(2rem, 2.1vw, 4rem);
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-            color: var(--text);
+            text-align: center;
             text-decoration: none;
-            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
-            overflow: hidden;
-            white-space: nowrap;
+            transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
         }
 
-        .pill-red {
-            flex: 0 0 36.5%;
-            background: var(--red);
+        .button:hover { transform: translateY(-2px); }
+        .button-primary { background: var(--accent); }
+        .button-primary:hover { background: var(--accent-hover); }
+        .button-secondary { background: var(--primary-strong); }
+        .button-secondary:hover { background: #2b6cb0; }
+        .button-outline { border-color: var(--border); background: transparent; }
+        .button-outline:hover { border-color: var(--primary); background: rgba(99, 179, 237, 0.1); }
+
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 20px;
+            padding: 24px 56px 30px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: center;
         }
 
-        .pill-blue {
-            flex: 0 0 31.5%;
-            background: var(--blue);
+        footer a { font-weight: 600; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        .modal[hidden] { display: none; }
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.78);
         }
 
-        .pill-dark {
-            flex: 0 0 31.5%;
-            background: var(--navy);
-            border: 2px solid var(--border);
+        .modal-content {
+            width: min(100%, 620px);
+            max-height: min(760px, 90vh);
+            overflow-y: auto;
+            padding: 30px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
-        .code-line {
-            margin-top: 8px;
-            padding-left: 4px;
-            color: var(--code);
-            font-size: clamp(1.5rem, 2vw, 3.1rem);
-            line-height: 1.3;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-            letter-spacing: -0.02em;
-            word-wrap: break-word;
+        .modal-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+        .close-button { border: 0; background: transparent; color: var(--muted); font-size: 2rem; line-height: 1; cursor: pointer; }
+        .close-button:hover { color: var(--text); }
+        .tabs { display: flex; gap: 4px; margin: 22px 0; border-bottom: 1px solid var(--border); }
+        .tab-button { padding: 11px 14px; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--muted); font: inherit; font-weight: 700; cursor: pointer; }
+        .tab-button[aria-selected="true"] { border-bottom-color: var(--primary); color: var(--primary); }
+        .tab-panel[hidden] { display: none; }
+        .modal h4 { margin: 22px 0 6px; color: var(--primary); }
+
+        @media (max-width: 620px) {
+            body { padding: 14px; }
+            header { padding: 38px 24px 28px; }
+            main { padding: 0 24px 34px; }
+            footer { padding: 22px 24px 26px; }
+            .services { grid-template-columns: 1fr; }
+            .actions .button { width: 100%; }
         }
 
-        @media (max-width: 980px) {
-            .button-row {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .pill,
-            .pill-red,
-            .pill-blue,
-            .pill-dark {
-                flex: 1 1 auto;
-                width: 100%;
-                min-height: 110px;
-                white-space: normal;
-                text-align: center;
-            }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .button { transition: none; }
         }
     </style>
 </head>
 <body>
     <div class="page-shell">
-        <div class="button-row" aria-label="Quick contact links">
-            <a class="pill pill-red" href="https://www.amazon.com/s?k=dararat+lorimer" target="_blank" rel="noopener noreferrer">Find us on Amazon</a>
-            <a class="pill pill-blue" href="https://www.youtube.com/results?search_query=peterchannel67" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
-            <a class="pill pill-dark" href="mailto:info@dedaragroup.com">Email DEDARAGROUP</a>
-        </div>
+        <div class="card">
+            <header>
+                <div class="brand">
+                    <img class="brand-logo" src="logo.svg" alt="DEDARA logo">
+                    <p class="eyebrow">Endless trust</p>
+                    <h1>DEDARAGROUP</h1>
+                </div>
+                <p class="tagline">Building practical ideas and trusted opportunities for a better tomorrow.</p>
+            </header>
 
-        <div class="code-line">class="" href="Whatsapp Business: +447982966624"</div>
+            <main>
+                <section aria-labelledby="about-heading">
+                    <h2 id="about-heading">About us</h2>
+                    <p>DEDARAGROUP is a forward-looking global vision focused on the things that matter most: people, wellbeing, creativity, technology, and sustainable living.  </p>
+                    <p>We connect ideas, people, and projects to create useful solutions for individuals, families, creators, and businesses.</p>
+                    <p>We are connectiong creative service with the global market through both B2C adn B2B channels. </p>
+                </section>
+
+                <section aria-labelledby="work-heading">
+                    <h2 id="work-heading">What we do</h2>
+                    <p>Our growing ecosystem brings together expertise and collaboration across several connected areas:</p>
+                    <ul class="services">
+                        <li><strong>Food &amp; wellbeing</strong>Practical ideas that support healthier, more sustainable lives.</li>
+                        <li><strong>Technology &amp; AI</strong>Digital tools, NLP, and conversational AI for modern needs.</li>
+                        <li><strong>Creativity &amp; media</strong>Content, publishing, and opportunities for the creator economy.</li>
+                        <li><strong>Projects &amp; strategy</strong>Planning, consulting, and delivery from concept to completion.</li>
+                    </ul>
+                    <p>We believe progress is strongest when it is built with trust, care, innovation, and opportunity for everyone.</p>
+                </section>
+
+                <section aria-labelledby="connect-heading">
+                    <h2 id="connect-heading">Stay connected</h2>
+                    <p>Explore our latest projects and announcements, or get in touch to discuss an idea or collaboration.</p>
+                    <div class="actions">
+                        <a class="button button-primary" href="https://www.amazon.com/s?k=dararat lorimer" target="_blank" rel="noopener noreferrer">Find us on Amazon</a>
+                        <a class="button button-secondary" href="https://www.youtube.com/results?search_query=peterchannel67" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+                        <a class="button button-outline" href="mailto:info@dedaragroup.com">Email DEDARAGROUP</a>
+                        <a class="button button-outline" href="https://wa.me/447982966624" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <span>&copy; <span id="year">2026</span> DEDARAGROUP. All rights reserved.</span>
+                <a href="#legal" id="openLegalModal">Terms &amp; Privacy Policy</a>
+            </footer>
+        </div>
     </div>
+
+    <div class="modal" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle" hidden>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="legalTitle">Terms &amp; privacy</h3>
+                <button class="close-button" id="closeModal" type="button" aria-label="Close terms and privacy dialog">&times;</button>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Legal information">
+                <button class="tab-button" id="termsTab" type="button" role="tab" aria-selected="true" aria-controls="termsPanel">Terms &amp; Conditions</button>
+                <button class="tab-button" id="privacyTab" type="button" role="tab" aria-selected="false" aria-controls="privacyPanel">Privacy Policy</button>
+            </div>
+
+            <section id="termsPanel" class="tab-panel" role="tabpanel" aria-labelledby="termsTab">
+                <p>By using this website, you agree to use it lawfully and respectfully. The information provided is for general information and may change without notice.</p>
+                <h4>Intellectual property</h4>
+                <p>DEDARAGROUP names, logos, written content, and original materials are protected by applicable intellectual-property laws. Please contact us before reproducing our materials.</p>
+                <h4>External links</h4>
+                <p>Links to third-party websites are provided for convenience. DEDARAGROUP is not responsible for external content, availability, or privacy practices.</p>
+            </section>
+
+            <section id="privacyPanel" class="tab-panel" role="tabpanel" aria-labelledby="privacyTab" hidden>
+                <p>We respect your privacy. This website does not require an account and does not intentionally collect personal information through forms or tracking tools.</p>
+                <h4>Contacting us</h4>
+                <p>If you email us, we will use the information you provide only to respond to your message and manage the conversation.</p>
+                <h4>Hosting and third parties</h4>
+                <p>This website is hosted through GitHub Pages. External services linked from this page may have their own terms, cookies, and privacy policies.</p>
+                <h4>Questions</h4>
+                <p>For privacy questions, email <a href="mailto:info@dedaragroup.com">info@dedaragroup.com</a>.</p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("legalModal");
+        const openButton = document.getElementById("openLegalModal");
+        const closeButton = document.getElementById("closeModal");
+        const termsTab = document.getElementById("termsTab");
+        const privacyTab = document.getElementById("privacyTab");
+        const termsPanel = document.getElementById("termsPanel");
+        const privacyPanel = document.getElementById("privacyPanel");
+        let lastFocusedElement;
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        function openModal(event) {
+            event.preventDefault();
+            lastFocusedElement = document.activeElement;
+            modal.hidden = false;
+            closeButton.focus();
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            modal.hidden = true;
+            document.body.style.overflow = "";
+            if (lastFocusedElement) lastFocusedElement.focus();
+        }
+
+        function switchTab(tab) {
+            const showTerms = tab === "terms";
+            termsTab.setAttribute("aria-selected", String(showTerms));
+            privacyTab.setAttribute("aria-selected", String(!showTerms));
+            termsPanel.hidden = !showTerms;
+            privacyPanel.hidden = showTerms;
+        }
+
+        openButton.addEventListener("click", openModal);
+        closeButton.addEventListener("click", closeModal);
+        termsTab.addEventListener("click", () => switchTab("terms"));
+        privacyTab.addEventListener("click", () => switchTab("privacy"));
+        modal.addEventListener("click", (event) => {
+            if (event.target === modal) closeModal();
+        });
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && !modal.hidden) closeModal();
+        });
+    </script>
 </body>
 </html>
+
+
+
+
