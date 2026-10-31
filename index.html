@@ -229,13 +229,27 @@ a {
   border-color: #513b08 !important;
 }
 
-        
+     #photo-header {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
+    url("hero-photo.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 24px;
+}
+
+#photo-header h1,
+#photo-header .eyebrow,
+#photo-header .tagline {
+  color: white;
+}   
     </style>
 </head>
 <body>
     <div class="page-shell">
         <div class="card">
-            <header>
+            <header id="photo-header" >
                 <div class="brand">
                     <img class="brand-logo" src="Logo.png" alt="Logo.png">
                     <p class="eyebrow">Endless trust</p>
